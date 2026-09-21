@@ -1,46 +1,11 @@
-"""Resolver el siguiente problema utilizando funciones:
-Un productor frutihortícola desea contabilizar sus cajones de naranjas según el peso
-para poder cargar los camiones de reparto. La empresa cuenta con N camiones, y
-cada uno puede transportar hasta media tonelada (500 kilogramos). En un cajón
-caben 100 naranjas con un peso de entre 200 y 300 gramos cada una. Si el peso
-de alguna naranja se encuentra fuera del rango indicado se la clasifica para
-procesar como jugo. Desarrollar un programa para ingresar la cantidad de naranjas
-cosechadas e informar cuántos cajones se pueden llenar, cuántas naranjas son para
-jugo y si hay algún sobrante de naranjas que deba considerarse para el siguiente
-reparto. Simular el peso de cada unidad generando un número entero al azar entre
-150 y 350.
-Además, se desea saber cuántos camiones se necesitan para transportar la cosecha,
-considerando que la ocupación del camión no debe ser inferior al 80%; en
-caso contrario el camión no serán despachado por su alto costo."""
 
-# Mi interpretación de la consigna es que, si quedan naranjas sueltas (que no logran completar un cajón) 
-# quedan como sobrantes. Si quedan también cajones sin enviar porque no se logró completar el peso mínimo del camión, 
-# también son sobrantes para el próximo viaje pero son dos categorías distintas: naranjas sueltas y cajones.
-
-import random
-
-random.seed(0)
-
-
-def genera_peso(naranja) -> int:
-    """
-    Contrato: Genera un peso aleatorio para asignarles a las naranjas.
-
-    Pre: el dato debe ser entero y positivo.
-    Post: Devuelve un entero positivo entre 150g y 350g.
-
-    """
-
-    peso = random.randint(150, 350)
-
-    return peso
-
+from random import randint
 
 def separa_cosecha(naranjas=list) -> tuple:
     """
     Contrato: Verifica el peso de las naranjas y las clasifica en dos grupos: aptas y jugo.
 
-    pre: los datos que recibe deben ser enteros positivos.
+    pre: la lista que recibe no debe estar vacía.
     post: devuelve una tupla con dos listas, una con las naranjas aptas y otra con las de jugo.
 
     """
@@ -57,42 +22,100 @@ def separa_cosecha(naranjas=list) -> tuple:
     return (aptas, jugo)
 
 
-def carga_cajones(aptas = list):
+def carga_cajones(aptas=list):
     """
-    Contrato: Se encarga de cargar los cajones con naranjas aptas.
+    Contrato: Carga los cajones con 100 naranjas cada uno y calcula el peso de los mismos. Si hay sobrantes calcula su peso y número
 
     pre: la lista que recibe no debe estar vacía.
-    post:
+    post: devuelve una tupla con dos valores: una lista con los pesos de los cajones y otra tupla con la cantidad de sobrante 
+    y su peso (en caso de que sobre).
 
     """
-    cajones_jugo = 0
+    cant_caj = len(aptas) // 100
+    sueltas = len(aptas) % 100
+
+    cajones = []
+
+    for i in range(cant_caj):
+        # Como ya se las cantidades que guardan los cajones y cuántos necesito, voy sacando de a 100 naranjas.
+        inicio = i * 100
+        peso = sum(aptas[inicio : inicio + 100])
+
+        cajones.append(
+            peso
+        )  # Y guardo el peso total del cajón en una lista de cajones.
+
+    sobrante = 0  # Si no hay sueltas vuelve en 0.
+    if sueltas > 0:
+        peso = sum(
+            aptas[-sueltas:]
+        )  # Si hay sueltas también suma su peso. Puede que sea medio YAGNI pero me pareció útil.
+        sobrante = (sueltas, peso)
+
+    return (cajones, sobrante)
 
 
-def carga_camiones():
+def carga_camiones(cajones=list) -> tuple:
     """
-    Contrato: Se encarga de cargar los camiones con los cajones de naranjas.
+    Contrato: Calcula cuántos camiones se van a necesitar para transportar los cajones de naranjas.
 
-    pre:
-    post:
+    pre: la lista de cajones no debe estar vacía.
+    post: devuelve una tupla que contiene la cantidad de camiones que se necesitan y el peso sobrante si hubiese.
 
     """
-    pass
+    cargas = (400, 500)
+    # 
+    camiones = 0
+    camion = 0
+    sobrante = 0 # Si no sobran cajones vuelve vacío.   
+    for cajon in cajones:
+        if camion + cajon <= cargas[1]:
+            camion += cajon
 
+        else:
+            if camion >= cargas[0]:
+                camiones += 1
+                camion = cajon
 
-def main() -> None:
+            elif camion < cargas[0]:
+                sobrante = camion + cajon
+                break
+
+    if camion >= cargas[0]:
+        camiones += 1
+    else:
+        sobrante = camion
+
+    return (camiones, sobrante)
+
     
+def main() -> None:
+
     while True:
         cosecha_total = int(input("\nIngrese la cosecha total de naranjas: "))
         if cosecha_total > 0:
             break
 
-    pesos = []
-    for nar in range(cosecha_total):
-        nar = genera_peso(nar)
-        pesos.append(nar)
+    pesos = [randint(150, 350) for x in range(cosecha_total)]
+    aptas, jugo = separa_cosecha(pesos)
 
-    aptas, jugo = separa_cosecha(cosecha_total)
-    
+    print(f"\nHay un total de: {len(aptas)} naranjas aptas en la cosecha.")
+
+    cajones, nar_sobr = carga_cajones(aptas)
+    print(f"\nLa cantidad de cajones de 100 naranjas aptas son {len(cajones)}")
+    if nar_sobr[0] > 0:
+        print(f"\nLa cantidad de naranjas sueltas son: {nar_sobr[0]}, con un peso de {nar_sobr[1]/100} kg")
+
+    else:
+        print("\nNo quedaron naranjas sueltas.")
+
+    camiones, sobrante = carga_camiones(cajones)
+    print(f"Se necesitan {camiones} para repartir la cosecha de naranjas.")
+    if sobrante > 0:
+        print(f"Hubo un total de {sobrante} kg de naranja que quedará para el próximo reparto.")
+
+    else:
+        print(f"No hubo cajones sobrantes.")
 
 
 if __name__ == "__main__":
