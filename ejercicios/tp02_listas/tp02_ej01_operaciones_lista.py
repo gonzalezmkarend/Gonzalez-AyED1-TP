@@ -14,7 +14,7 @@ def carga_lista() -> list[int]:
 
     return lista
 
-def producto(lista = list[int]) -> int:
+def producto(lista: list[int]) -> int:
     '''
     Contrato: multiplica los valores de la lista.
     
@@ -29,7 +29,7 @@ def producto(lista = list[int]) -> int:
     return producto
 
 
-def elimina(lista = list[int], valor = int) -> list[int]:
+def elimina(lista: list[int], valor: int) -> list[int]:
     '''
     Contrato: Elimina todas las apariciones del valor ingresado que se encuentren en la lista.
     
@@ -44,7 +44,7 @@ def elimina(lista = list[int], valor = int) -> list[int]:
     return lista
 
 
-def es_capicua(lista = list[int]) -> bool:
+def es_capicua(lista: list[int]) -> bool:
     '''
     contrato: determina si una lista es capicúa.
     
@@ -60,3 +60,6 @@ def main() -> None:
     print(producto(lista))
     print(elimina(lista))
     print(es_capicua(lista))
+
+if __name__ == "__main__":
+    main()

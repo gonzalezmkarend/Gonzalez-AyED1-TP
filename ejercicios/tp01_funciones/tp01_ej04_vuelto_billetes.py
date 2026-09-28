@@ -1,4 +1,5 @@
-def calcula_vuelto(compra=int, paga=int) -> tuple:
+
+def calcula_vuelto(compra:int, paga:int) -> tuple:
     """
     Contrato: Calcula la cantidad de billetes que se deben dar según el monto del vuelto.
 

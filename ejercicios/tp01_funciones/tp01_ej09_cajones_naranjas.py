@@ -1,7 +1,7 @@
 
 from random import randint
 
-def separa_cosecha(naranjas=list) -> tuple:
+def separa_cosecha(naranjas:list) -> tuple:
     """
     Contrato: Verifica el peso de las naranjas y las clasifica en dos grupos: aptas y jugo.
 
@@ -22,7 +22,7 @@ def separa_cosecha(naranjas=list) -> tuple:
     return (aptas, jugo)
 
 
-def carga_cajones(aptas=list):
+def carga_cajones(aptas: list) -> tuple:
     """
     Contrato: Carga los cajones con 100 naranjas cada uno y calcula el peso de los mismos. Si hay sobrantes calcula su peso y número
 
@@ -55,7 +55,7 @@ def carga_cajones(aptas=list):
     return (cajones, sobrante)
 
 
-def carga_camiones(cajones=list) -> tuple:
+def carga_camiones(cajones: list) -> tuple:
     """
     Contrato: Calcula cuántos camiones se van a necesitar para transportar los cajones de naranjas.
 

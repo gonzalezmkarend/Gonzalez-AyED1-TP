@@ -1,3 +1,4 @@
+
 def ingresa_num() -> tuple:
     """
     Contrato: Ingresa los números a evaluar y los devuelve en una tupla.

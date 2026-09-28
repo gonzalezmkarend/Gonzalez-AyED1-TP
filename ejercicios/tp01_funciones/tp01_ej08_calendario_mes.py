@@ -1,6 +1,6 @@
 #Está fea mi resolución la verdad...
 
-def diadelasemana(dia = int, mes = int, anio = int) -> int:
+def diadelasemana(dia: int, mes: int, anio: int) -> int:
     '''
     Contrato: Permite averiguar el día de la semana para una fecha determinada.
 
@@ -26,7 +26,7 @@ def diadelasemana(dia = int, mes = int, anio = int) -> int:
     return diasem
 
 
-def imprime_calendario(mes = int, anio = int, diasem = int) -> None:
+def imprime_calendario(mes: int, anio: int, diasem: int) -> None:
     '''
     Contrato: Imprime un calendario que muestra el inicio de semana y todos sus días
     según los datos ingresados.

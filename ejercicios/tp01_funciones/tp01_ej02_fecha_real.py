@@ -1,3 +1,4 @@
+
 def verifica_fechas() -> tuple:
     """
     Contrato: Permite ingresar tres fechas correspondientes a un día, un mes y un año. Verificando que
@@ -17,7 +18,7 @@ def verifica_fechas() -> tuple:
     return (dia, mes, anio)
 
 
-def verifica_validez(dia=int, mes=int, anio=int) -> bool:
+def verifica_validez(dia:int, mes:int, anio:int) -> bool:
     """
     Contrato: Verifica la validez de la fecha que recibe en conjunto.
 

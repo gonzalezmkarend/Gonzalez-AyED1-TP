@@ -22,7 +22,7 @@ def verifica_fechas() -> tuple:
     return (dia, mes, anio)
 
 
-def verifica_validez(dia=int, mes=int, anio=int) -> bool:
+def verifica_validez(dia:int, mes:int, anio:int) -> bool:
     """
     Contrato:  Verifica la validez de la fecha en conjunto.
 
@@ -84,7 +84,7 @@ def dia_siguiente(dia: int, mes: int, anio: int) -> tuple:
         return (dia, mes, anio)
 
 
-def suma_dias(d=int, m=int, a=int, dias=int) -> tuple:
+def suma_dias(d:int, m:int, a:int, dias:int) -> tuple:
     """
     Contrato: Suma una cantidad determinada de días a una fecha y los devuelve en una tupla.
 
@@ -98,7 +98,7 @@ def suma_dias(d=int, m=int, a=int, dias=int) -> tuple:
     return (d, m, a)
 
 
-def dias_entre(dia1=int, mes1=int, anio1=int, dia2=int, mes2=int, anio2=int) -> int:
+def dias_entre(dia1:int, mes1:int, anio1:int, dia2:int, mes2:int, anio2:int) -> int:
     """
     Contrato: Calcula la cantidad de días transcurridos entre dos fechas distintas.
 
@@ -107,7 +107,7 @@ def dias_entre(dia1=int, mes1=int, anio1=int, dia2=int, mes2=int, anio2=int) -> 
     post: devuelve un entero igual o mayor a 0 que representan los días.
 
     """
-    assert (dia1, mes1, anio1) <= (dia1, mes2, anio2)
+    #assert (dia1, mes1, anio1) <= (dia1, mes2, anio2)
     cont = 0
 
     while (dia1, mes1, anio1) != (dia2, mes2, anio2):
@@ -172,8 +172,8 @@ def main() -> None:
                 cont = dias_entre(dia1, mes1, anio1, dia2, mes2, anio2)
                 if cont > 0:
                     print(
-                        f"La cantidad de días transcurridos entre ambas fechas fue: {cont}."
-                    )
+                        f"La cantidad de días transcurridos entre {dia1}/{mes1}/{anio1} y {dia2}/{mes2}/{anio2} fue: {cont}."
+                    ) 
 
                 else:
                     print("Ambas fechas son iguales.")

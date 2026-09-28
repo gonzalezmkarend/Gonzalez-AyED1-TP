@@ -1,4 +1,5 @@
-def concatenar_num(num1=int, num2=int) -> int:
+
+def concatenar_num(num1:int, num2:int) -> int:
     """
     Contrato: Recibe dos números enteros y devuelve un único entero de ambos concatenados.
 
