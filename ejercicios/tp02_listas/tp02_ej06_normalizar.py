@@ -1,6 +1,20 @@
-'''Escribir una función que reciba una lista de números enteros como parámetro y la
-normalice, es decir que todos sus elementos deben sumar 1.0, respetando las proporciones relativas que cada elemento tiene en la lista original. 
-Desarrollar también un programa que permita verificar el comportamiento de la función. 
-Por ejemplo, normalizar([1, 1, 2]) debe devolver [0.25, 0.25, 0.50].
-'''
+
+def normaliza_lista(lista: list[int]) -> list[float]:
+    '''
+    Contrato: Normaliza los enteros de la lista para que la suma de sus elementos de un total de: 1.0.
+
+    Pre: La lista no debe estar vacía y sus elementos deben ser postitivos y enteros.
+    Post: Devuelve una lista de flotantes.
+    
+    '''
+
+    total = sum(lista)
+    lista_normalizada = [num / total for num in lista]
+
+    return lista_normalizada
+
+assert normaliza_lista([1, 1, 2]) == [0.25, 0.25, 0.5]
+assert normaliza_lista([8, 5, 7]) == [0.4, 0.25, 0.35]
+assert normaliza_lista([6, 9, 10]) == [0.24, 0.36, 0.4]
+
 
