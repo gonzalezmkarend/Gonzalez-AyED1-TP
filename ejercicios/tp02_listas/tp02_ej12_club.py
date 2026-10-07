@@ -47,12 +47,14 @@ def borrar_socio(socio: int, lista_socios: list[int]) ->None:
     
     '''
     if socio in lista_socios:
-        for elem in lista_socios:
-            if elem == socio:
-                lista_socios.remove(socio)
+        #for elem in lista_socios:
+         #   if elem == socio:
+          #      lista_socios.remove(elem)
+
+        lista_socios = [elem for elem in lista_socios if elem != socio] 
         
         print(f"\nEl socio nro {socio} fue eliminado exitosamente.")
-        print(lista_socios)
+        #print(lista_socios)
     
     else:
         print(f"\nEl socio {socio} no se encontró en el registro.")
