@@ -15,9 +15,15 @@ def es_capicua(cadena: str) -> bool:
 
     for x in range(largo // 2):
         if cadena[x] != cadena[largo - 1 - x]:
-            return False
+           return False
 
     return True
+
+    #for x, valor in enumerate(cadena[:largo // 2]):
+     #   if cadena[x] != cadena[largo -1 -x]:
+     #       return False
+
+    #return True
 
 assert es_capicua("Neuquen") == True
 assert es_capicua(" reconocer") == True 
