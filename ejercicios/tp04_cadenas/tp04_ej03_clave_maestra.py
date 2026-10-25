@@ -1,4 +1,3 @@
-
 while True:
     clave_maestra = input("\nIngrese la clave maestra: ")
 

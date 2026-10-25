@@ -1,12 +1,12 @@
-
 def numero_romano(num: int) -> str:
-    '''
+    """
     Contrato: Convierte un número entero entre el 0 y el 3999 en número romano.
-    
+
     Precondiciones: El número ingresado debe ser entero y positivo.
-    Postcondiciones: Devuelve un string de .
-    
-    '''
+    Postcondiciones: Devuelve un string que equivale
+
+    """
+    #
     millares = ["", "M", "MM", "MMM"]
     centenas = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
     decenas = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
@@ -17,7 +17,7 @@ def numero_romano(num: int) -> str:
     d = (num // 10) % 10
     u = num % 10
 
-    return millares[m]+centenas[c]+decenas[d]+unidades[u]
+    return millares[m] + centenas[c] + decenas[d] + unidades[u]
 
 
 while True:
