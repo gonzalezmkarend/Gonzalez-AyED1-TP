@@ -65,7 +65,7 @@ def main() -> None:
                 print(f"\nLa posición del valor solicitado es: {buscador}")
 
             if contador_errores == 3:
-                print("\nSe alcanzó el límite máximo de intentos ¡Adiós!")
+                print("\nSe alcanzó el límite máximo de intentos en el plan gratuito...")
                 break
 
 

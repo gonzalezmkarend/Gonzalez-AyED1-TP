@@ -1,7 +1,7 @@
 def suma_num(num1: str, num2: str) -> float:
     """
     Contrato: Recibe dos cadenas de caracteres que representan dos números reales. Los suma y devuelve su resultado como número flotante.
-    En caso de que los datos que reciba no sean válidos, devuelve un -1
+    En caso de que alguno de los datos que reciba no sea válido, devuelve un -1
 
     Precondiciones: Las cadenas no deben estar vacías.
     Postcondiciones: En caso de que los números sean válidos devuelve el resultado de la suma, en caso contrario devuelve un -1

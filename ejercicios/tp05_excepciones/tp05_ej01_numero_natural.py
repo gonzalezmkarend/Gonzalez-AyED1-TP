@@ -11,6 +11,7 @@ def main() -> None:
 
         else:
             if num <= 0:
+                # Esto cuenta????
                 try:
                     raise ValueError("\nEl número ingresado debe ser mayor a 0.")
                 except ValueError as mensj:

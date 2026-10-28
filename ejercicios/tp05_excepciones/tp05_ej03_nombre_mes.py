@@ -38,7 +38,7 @@ def main() -> None:
             break
 
     mes = encuentra_mes(num)
-    if encuentra_mes == []:
+    if mes == []:
         print("\nError. El mes ingresado es inválido.")
 
     else:

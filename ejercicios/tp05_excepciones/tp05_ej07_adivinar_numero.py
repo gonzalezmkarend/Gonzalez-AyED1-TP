@@ -17,6 +17,7 @@ def main() -> None:
 
         except ValueError:
             print("\nUps. Debe ingresar un número entero")
+            intentos += 1
 
         else:
             if intento > numero_random:
