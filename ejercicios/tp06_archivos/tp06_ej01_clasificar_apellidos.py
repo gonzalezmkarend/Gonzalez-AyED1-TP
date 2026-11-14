@@ -39,7 +39,8 @@ def leer_archivo() -> None:
 
 
 def main() -> None:
-    """ "Programa principal."""
+    """Programa principal."""
+    
     leer_archivo()
 
 

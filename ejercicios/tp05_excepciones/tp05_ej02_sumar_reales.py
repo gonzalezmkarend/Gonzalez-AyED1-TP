@@ -1,4 +1,4 @@
-def suma_num(num1: str, num2: str) -> float:
+def suma_num(num1: str, num2: str) -> int:
     """
     Contrato: Recibe dos cadenas de caracteres que representan dos números reales. Los suma y devuelve su resultado como número flotante.
     En caso de que alguno de los datos que reciba no sea válido, devuelve un -1
@@ -22,7 +22,7 @@ def suma_num(num1: str, num2: str) -> float:
             return num
 
         else:
-            return num1 + num2
+            return int(num1 + num2)
 
 
 def main() -> None:

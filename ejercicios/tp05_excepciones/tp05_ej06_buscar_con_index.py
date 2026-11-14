@@ -51,12 +51,12 @@ def main() -> None:
     while True:
         try:
             num = int(input("\nIngrese el valor que desea buscar: "))
-            buscador = busca_valor(lista, num)
 
         except ValueError:
             print("\nError. Debe ingresar un número entero.")
 
         else:
+            buscador = busca_valor(lista, num)
             if buscador == -1:
                 contador_errores += 1
                 print("\nEl valor solicitado no se encuentra en la lista.")
@@ -65,7 +65,9 @@ def main() -> None:
                 print(f"\nLa posición del valor solicitado es: {buscador}")
 
             if contador_errores == 3:
-                print("\nSe alcanzó el límite máximo de intentos en el plan gratuito...")
+                print(
+                    "\nSe alcanzó el límite máximo de intentos en el plan gratuito..."
+                )
                 break
 
 

@@ -41,7 +41,7 @@ def grabar_rango_alturas(deportes: set[str]) -> bool:
     if not deportes:
         return False
 
-    with open("alturas_por_deporte.txt", "at", encoding="utf-8") as arch:
+    with open("alturas_por_deporte.txt", "wt", encoding="utf-8") as arch:
         
         for deporte in deportes:
             arch.write(deporte + "\n")
@@ -71,17 +71,12 @@ def grabar_promedio(deportes: set[str]) -> bool:
     if not deportes:
         return False
     
-    with open("alturas_por_deporte.txt", "rt", encoding="utf-8-sig") as arch:
-
-        for linea in arch:
-            pass
-        
-    
+    with open("alturas_por_deporte.txt", "rt", encoding="utf-8-sig") as arch:      
 
 
 
 def main() -> None:
-    """ "Programa principal."""
+    """Programa principal."""
     deportes = {"Fútbol", "Básquetbol", "Golf", "Waterpolo", "Judo", "Rugby", "BMX", "Críquet"}
 
     grabar_rango_alturas(deportes)
