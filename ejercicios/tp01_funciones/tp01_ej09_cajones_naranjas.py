@@ -1,7 +1,7 @@
-
 from random import randint
 
-def separa_cosecha(naranjas:list) -> tuple:
+
+def separa_cosecha(naranjas: list) -> tuple:
     """
     Contrato: Verifica el peso de las naranjas y las clasifica en dos grupos: aptas y jugo.
 
@@ -27,7 +27,7 @@ def carga_cajones(aptas: list) -> tuple:
     Contrato: Carga los cajones con 100 naranjas cada uno y calcula el peso de los mismos. Si hay sobrantes calcula su peso y número
 
     pre: la lista que recibe no debe estar vacía.
-    post: devuelve una tupla con dos valores: una lista con los pesos de los cajones y otra tupla con la cantidad de sobrante 
+    post: devuelve una tupla con dos valores: una lista con los pesos de los cajones y otra tupla con la cantidad de sobrante
     y su peso (en caso de que sobre).
 
     """
@@ -64,10 +64,10 @@ def carga_camiones(cajones: list) -> tuple:
 
     """
     cargas = (400, 500)
-    # 
+    #
     camiones = 0
     camion = 0
-    sobrante = 0 # Si no sobran cajones vuelve vacío.   
+    sobrante = 0  # Si no sobran cajones vuelve vacío.
     for cajon in cajones:
         if camion + cajon <= cargas[1]:
             camion += cajon
@@ -88,7 +88,7 @@ def carga_camiones(cajones: list) -> tuple:
 
     return (camiones, sobrante)
 
-    
+
 def main() -> None:
 
     while True:
@@ -104,7 +104,9 @@ def main() -> None:
     cajones, nar_sobr = carga_cajones(aptas)
     print(f"\nLa cantidad de cajones de 100 naranjas aptas son {len(cajones)}")
     if nar_sobr[0] > 0:
-        print(f"\nLa cantidad de naranjas sueltas son: {nar_sobr[0]}, con un peso de {nar_sobr[1]/100} kg")
+        print(
+            f"\nLa cantidad de naranjas sueltas son: {nar_sobr[0]}, con un peso de {nar_sobr[1]/100} kg"
+        )
 
     else:
         print("\nNo quedaron naranjas sueltas.")
@@ -112,7 +114,9 @@ def main() -> None:
     camiones, sobrante = carga_camiones(cajones)
     print(f"Se necesitan {camiones} para repartir la cosecha de naranjas.")
     if sobrante > 0:
-        print(f"Hubo un total de {sobrante} kg de naranja que quedará para el próximo reparto.")
+        print(
+            f"Hubo un total de {sobrante} kg de naranja que quedará para el próximo reparto."
+        )
 
     else:
         print(f"No hubo cajones sobrantes.")

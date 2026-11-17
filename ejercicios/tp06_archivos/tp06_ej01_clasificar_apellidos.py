@@ -1,4 +1,3 @@
-
 def leer_archivo() -> None:
     """
     Contrato:
@@ -40,10 +39,9 @@ def leer_archivo() -> None:
 
 def main() -> None:
     """Programa principal."""
-    
+
     leer_archivo()
 
 
 if __name__ == "__main__":
     main()
- 

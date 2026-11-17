@@ -1,4 +1,5 @@
-#Medio corto todo...
+# Medio corto todo...
+
 
 def main() -> None:
     while True:
@@ -6,11 +7,11 @@ def main() -> None:
         if n > 0:
             break
 
-    lista = [x **2 for x in range(1, n+1)]
+    lista = [x**2 for x in range(1, n + 1)]
 
-    #print(lista)
-    print(lista[-10: ])
+    # print(lista)
+    print(lista[-10:])
 
 
 if __name__ == "__main__":
-    main()    
+    main()

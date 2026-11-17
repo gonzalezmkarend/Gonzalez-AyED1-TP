@@ -1,6 +1,6 @@
 def reemplaza_palabra(cadena: str, pal_elim: str, pal_nueva: str) -> tuple[str, int]:
     """
-    Contrato: Se encarga de modificar una cadena reemplazando una palabra por otra 
+    Contrato: Se encarga de modificar una cadena reemplazando una palabra por otra
     (en cada una de las apariciones de la palabra a reemplazar)
 
     Precondiciones: Los tres datos que recibe (cadena, pal_elim, pal_nueva) deben ser
@@ -12,20 +12,22 @@ def reemplaza_palabra(cadena: str, pal_elim: str, pal_nueva: str) -> tuple[str, 
     cadena = cadena.split()
     veces = [pal for pal in cadena if pal.casefold() == pal_elim.casefold()]
 
-    '''lista = []
+    """lista = []
     for palabra in cadena:
         if palabra.casefold() == pal_elim.casefold():
             lista.append(pal_nueva)
 
         else:
-            lista.append(palabra)'''
+            lista.append(palabra)"""
 
-    nueva = [pal_nueva if palabra.casefold() == pal_elim.casefold() else palabra for palabra in cadena]
+    nueva = [
+        pal_nueva if palabra.casefold() == pal_elim.casefold() else palabra
+        for palabra in cadena
+    ]
 
     print(nueva)
 
     return (" ".join(nueva), len(veces))
-
 
 
 assert reemplaza_palabra(
@@ -39,5 +41,3 @@ assert reemplaza_palabra(
 assert reemplaza_palabra(
     "Pablito clavó un clavito ¿Qué clavito clavó Pablito?", "PABLITO", "Claudito"
 ) == ("Claudito clavó un clavito ¿Qué clavito clavó Claudito?")
-
-

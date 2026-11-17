@@ -1,4 +1,3 @@
-
 from random import randint
 
 lista = [randint(1, 100) for num in range(30)]

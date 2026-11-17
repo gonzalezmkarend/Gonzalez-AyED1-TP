@@ -4,7 +4,7 @@ for x in range(10_001):
         print(x)
 
     except KeyboardInterrupt:
-        op = input("\nPresione S para salir. Enter para continuar: ")         
+        op = input("\nPresione S para salir. Enter para continuar: ")
 
         if op.upper() == "S":
             print("\nConteo cancelado.")

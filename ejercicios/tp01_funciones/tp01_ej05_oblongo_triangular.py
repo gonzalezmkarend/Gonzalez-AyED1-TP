@@ -1,4 +1,3 @@
-
 # ---Lambda de oblongo:
 oblongo = lambda num: ((4 * num + 1) ** (1 / 2)) % 1 == 0
 

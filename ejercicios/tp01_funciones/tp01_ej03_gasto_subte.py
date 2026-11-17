@@ -1,5 +1,4 @@
-
-def aplica_descuento(viajes:int) -> float:
+def aplica_descuento(viajes: int) -> float:
     """
     Contrato: Aplica los descuentos correspondientes según los viajes realizados.
 

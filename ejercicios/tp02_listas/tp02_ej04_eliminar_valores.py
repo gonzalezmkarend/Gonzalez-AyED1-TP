@@ -1,5 +1,6 @@
 from random import randint
 
+
 def main() -> None:
     """
     Contrato: Función principal que organiza la ejecución del programa.

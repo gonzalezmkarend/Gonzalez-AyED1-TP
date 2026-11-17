@@ -7,9 +7,9 @@ def contar_vocales(palabra: str) -> dict[str, int]:
     el diccionario con los contadores actualizados, en caso contrario
     devuelve el diccionario sin cambios.
 
-    """    
+    """
     dicc = {"a": 0, "e": 0, "i": 0, "o": 0, "u": 0}
-    
+
     for letra in palabra.casefold():
         if letra in ("a", "e", "i", "o", "u"):
             dicc[letra] += 1
@@ -29,7 +29,7 @@ def vocales_frase(frase: str) -> None:
     frase = frase.split()
 
     for palabra in frase:
-        print(f'La palabra {palabra} contiene:')
+        print(f"La palabra {palabra} contiene:")
 
         vocales = contar_vocales(palabra)
         for vocal, cantidad in vocales.items():

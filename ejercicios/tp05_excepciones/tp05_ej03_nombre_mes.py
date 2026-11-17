@@ -1,4 +1,3 @@
-
 def encuentra_mes(num: int) -> str:
     """
     Contrato: Dado un entero devuelve el mes correspondiente en formato cadena.

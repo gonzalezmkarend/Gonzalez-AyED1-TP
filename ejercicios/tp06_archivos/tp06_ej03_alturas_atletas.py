@@ -1,16 +1,4 @@
-"""
-Una institución deportiva necesita clasificar a sus atletas para inscribirlos en los próximos juegos panamericanos.
-Para eso encargó la realización de un programa que incluya las siguientes funciones:
 
-grabar_rango_alturas(): Graba en un archivo las alturas de los atletas de distintas disciplinas,
-los que se ingresan desde el teclado. Cada dato se debe grabar en una linea distinta.
-
-grabar_promedio(): Graba en un archivo los promedios de las alturas de los atletas,
-leyendo los datos del archivo generado en el paso anterior. La disciplina y el promedio debe grabarse en lineas diferentes.
-
-mostrar_mas_altos(): Muestra por pantalla las disciplinas deportivas cuyos atletas superan la estatura promedio general.
-Obtener los datos del segundo archivo.
-"""
 
 def _ingresar_cadena(msg: str) -> str:
     """
@@ -71,7 +59,8 @@ def grabar_promedio(deportes: set[str]) -> bool:
     if not deportes:
         return False
     
-    with open("alturas_por_deporte.txt", "rt", encoding="utf-8-sig") as arch:      
+    with open("alturas_por_deporte.txt", "rt", encoding="utf-8-sig") as arch:
+        pass      
 
 
 
