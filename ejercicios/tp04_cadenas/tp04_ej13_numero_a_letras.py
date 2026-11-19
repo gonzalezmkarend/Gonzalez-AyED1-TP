@@ -1,4 +1,4 @@
-# Este código es como un delirio febril.
+# Sin finalizar.
 
 
 class MayorQueBillon(Exception):
